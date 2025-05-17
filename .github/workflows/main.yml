@@ -17,10 +17,8 @@ jobs:
       with:
         python-version: '3.10'
 
-    - name: Install dependencies
+    - name: Install Python dependencies
       run: |
-        python -m venv .venv
-        source .venv/bin/activate
         pip install -r requirements.txt
 
     - name: Install AWS CDK
@@ -40,5 +38,4 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_DEFAULT_REGION: us-east-1
       run: |
-        source .venv/bin/activate
         cdk deploy --require-approval never
