@@ -1,4 +1,4 @@
-name: Deploy CDK Stack
+name: MyS3ProjectStack
 
 on:
   push:
